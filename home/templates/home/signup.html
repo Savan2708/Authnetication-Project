@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="text-center mt-2">SignUp</h2>
+{% if messages %}
+{% for msg in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ msg }}
+</div>
+{% endfor %}
+{% endif %}
+    <div class="col-md-6 offset-md-3">
+        <form class="mt-2" method="post">{% csrf_token %}
+            <div class="form-group">
+                <label for="exampleusername">Username</label>
+                <input type="text" class="form-control" id="exampleusername"
+                aria-describedby="emailHelp" placeholder="Enter Username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="examplefname">First Name</label>
+                <input type="text" class="form-control" id="examplefname"
+                aria-describedby="emailHelp" placeholder="Enter First Name" name="fname" required>
+            </div>
+            <div class="form-group">
+                <label for="examplelname">Last Name</label>
+                <input type="text" class="form-control" id="examplelname"
+                aria-describedby="emailHelp" placeholder="Enter Last Name" name="lname" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" placeholder="Enter Email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="examplepass1">Password</label>
+                <input type="password" class="form-control" id="examplepass1" placeholder="Enter Password" name="pass1" required>
+            </div>
+            <div class="form-group">
+                <label for="examplepass2">Confirm Password</label>
+                <input type="password" class="form-control" id="examplepass2" placeholder="Re-Enter Password" name="pass2" required>
+            </div>
+                <center><button type="submit" class="btn btn-primary">Sign-Up</button></center>
+        </form>
+    </div>
+
+
+{% endblock %}

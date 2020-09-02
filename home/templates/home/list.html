@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center mt-2 pb-2">List</h1>
+
+{% for profile in prof.all %}
+
+<div class="container mt-2" style="border-style: solid;border-width: 1px;">
+  <div class="row">
+    <div class="col mt-2">
+      <img height="170px" width="200px" src="{{ profile.img.url }}">
+    </div>
+    <div class="col">
+        <div class="text text-left pt-3 pl-4">
+          <b><p>About : </p></b>
+        </div>
+        <div class="text">
+          <p>{{ profile.about }}</p>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <p>Ph Number : <b>{{ profile.phnum }} </b></p>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}

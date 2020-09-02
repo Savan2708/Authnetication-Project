@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="text-center mt-2">Setup Your Profile</h2>
+<div class="col-md-6 offset-md-3">
+
+<form class="mt-2" method="post" action="{% url 'edit' %}" enctype="multipart/form-data">{% csrf_token %}
+  <div class="form-group">
+    <label>Profile Picture</label><br>
+    <input type="file" name="img">
+  </div>
+  <div class="form-group">
+    <label>About Your Self</label><br>
+    <input type="textbox" class="form-control" placeholder="Write about yourself" name="about">
+  </div>
+  <div class="form-group">
+    <label>Phone Number</label><br>
+    <input type="number" class="form-control" placeholder="Enter your Number" name="phnum">
+  </div>
+  <center><button type="submit" class="btn btn-primary">Edit</button></center>
+</form>
+</div>
+
+
+{% endblock %}

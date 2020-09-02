@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if messages %}
+{% for msg in messages %}
+<div class="alert alert-warning alert-dismissible fade show mt-2" role="alert">
+  {{ msg }}
+</div>
+{% endfor %}
+{% endif %}
+
+<h1>Home</h1>
+{% if user.is_authenticated %}
+
+
+<p>Full Name : {{ user.first_name }} {{ user.last_name }}</p>
+<p>UserName : {{ user.username }}</p>
+<p>Email : {{ user.email }}</p>
+
+
+{% for profile in prof.all %}
+<p>Email : {{ profile.about }}</p>
+{% endfor %}
+
+<center><a href="{% url 'edit' %}"><button type="submit" class="btn btn-primary">Create-Profile</button></a></center>
+
+
+{% endif %}
+
+
+
+{% endblock %}
